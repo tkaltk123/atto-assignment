@@ -1,0 +1,15 @@
+CREATE TABLE IF NOT EXISTS hosts
+(
+    id              BIGINT AUTO_INCREMENT PRIMARY KEY,
+    created_at      TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    updated_at      TIMESTAMP    NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
+    name            VARCHAR(255) NOT NULL,
+    ip              VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS host_alive
+(
+    host_id         BIGINT PRIMARY KEY,
+    last_alive_time TIMESTAMP,
+    FOREIGN KEY (host_id) REFERENCES hosts (id) ON DELETE CASCADE
+);
