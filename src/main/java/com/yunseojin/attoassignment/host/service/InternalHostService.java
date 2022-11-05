@@ -12,9 +12,9 @@ public interface InternalHostService {
 
     HostEntity getHostById(Long hostId);
 
-    Boolean isDuplicateName(String name);
+    boolean isDuplicateName(String name);
 
-    Boolean isDuplicateIp(String ip);
+    boolean isDuplicateIp(String ip);
 
     List<HostEntity> getAllHosts();
 }

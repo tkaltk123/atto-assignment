@@ -3,6 +3,7 @@ package com.yunseojin.attoassignment;
 import com.yunseojin.attoassignment.etc.enums.ErrorMessage;
 import com.yunseojin.attoassignment.etc.exception.BaseException;
 import com.yunseojin.attoassignment.host.dto.HostRequest;
+import com.yunseojin.attoassignment.host.entity.HostEntity;
 import org.junit.jupiter.api.function.Executable;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -18,6 +19,14 @@ public class TestUtil {
     public static HostRequest getHostRequest(String name, String ip) {
 
         return HostRequest.builder()
+                .name(name)
+                .ip(ip)
+                .build();
+    }
+
+    public static HostEntity getHostEntity(String name, String ip) {
+
+        return HostEntity.builder()
                 .name(name)
                 .ip(ip)
                 .build();

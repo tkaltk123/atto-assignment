@@ -32,13 +32,13 @@ public class InternalHostServiceImpl implements InternalHostService {
     }
 
     @Override
-    public Boolean isDuplicateName(String name) {
-        return null;
+    public boolean isDuplicateName(String name) {
+        return false;
     }
 
     @Override
-    public Boolean isDuplicateIp(String ip) {
-        return null;
+    public boolean isDuplicateIp(String ip) {
+        return false;
     }
 
     @Override

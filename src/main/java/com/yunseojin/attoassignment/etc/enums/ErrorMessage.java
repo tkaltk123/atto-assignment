@@ -9,7 +9,7 @@ public enum ErrorMessage {
     ,DUPLICATED_HOST_NAME_EXCEPTION(3, "이미 존재하는 호스트 이름입니다.", HttpStatus.CONFLICT)
     ,DUPLICATED_HOST_IP_EXCEPTION(4, "이미 존재하는 호스트 IP 입니다.", HttpStatus.CONFLICT)
     ,LIMIT_OVER_HOST_EXCEPTION(5, "더 이상 호스트를 추가할 수 없습니다.", HttpStatus.BAD_REQUEST)
-    ,NOT_EXISTS_HOST_EXCEPTION(6, "존재하지 않는 호스트 입니다.", HttpStatus.FORBIDDEN)
+    ,HOST_NOT_FOUND_EXCEPTION(6, "호스트를 찾을 수 없습니다.", HttpStatus.FORBIDDEN)
     ;
 
     Integer code;
