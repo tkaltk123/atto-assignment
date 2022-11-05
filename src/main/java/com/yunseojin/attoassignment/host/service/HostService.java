@@ -7,9 +7,9 @@ import java.util.List;
 
 public interface HostService {
 
-    void createHost(HostRequest request);
+    HostResponse createHost(HostRequest request);
 
-    void updateHost(Long hostId, HostRequest request);
+    HostResponse updateHost(Long hostId, HostRequest request);
 
     void deleteHost(Long hostId);
 
