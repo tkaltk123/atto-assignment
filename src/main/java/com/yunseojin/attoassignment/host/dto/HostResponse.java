@@ -19,6 +19,6 @@ public class HostResponse implements Serializable {
     private Date updatedAt;
     private String name;
     private String ip;
-    private Date lastAliveTime;
     private Boolean isAlive;
+    private Date lastAliveTime;
 }

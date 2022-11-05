@@ -13,7 +13,7 @@ public interface HostService {
 
     void deleteHost(Long hostId);
 
-    Boolean isAliveHost(Long hostId);
+    boolean isAliveHost(Long hostId);
 
     HostResponse getHost(Long hostId);
 

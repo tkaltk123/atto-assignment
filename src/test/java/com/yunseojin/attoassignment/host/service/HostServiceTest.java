@@ -369,12 +369,13 @@ class HostServiceTest {
 
         //when
         when(internalHostService.getAllHosts()).thenReturn(list);
-        long time = System.nanoTime();
+        long time = System.currentTimeMillis();
         var result = hostService.getAllHosts();
-        time = System.nanoTime() - time;
+        time = System.currentTimeMillis() - time;
 
         //then
-        assertTrue(time < 1000000000L);
+        System.out.println(time);
+        assertTrue(time < 1000L);
         assertEquals(100, result.size());
     }
 
@@ -391,7 +392,7 @@ class HostServiceTest {
 
         var list = new ArrayList<HostEntity>();
         for (int i = 0; i < 100; ++i) {
-            list.add(getHostEntity("test" + i, "0.0.0" + i));
+            list.add(getHostEntity("test" + i, "192.168.0." + i));
         }
         return list;
     }
