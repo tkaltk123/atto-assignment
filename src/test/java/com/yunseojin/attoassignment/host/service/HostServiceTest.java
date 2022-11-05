@@ -1,6 +1,7 @@
 package com.yunseojin.attoassignment.host.service;
 
 import com.yunseojin.attoassignment.etc.enums.ErrorMessage;
+import com.yunseojin.attoassignment.host.mapper.HostMapper;
 import com.yunseojin.attoassignment.host.serviceimpl.HostServiceImpl;
 import com.yunseojin.attoassignment.host.serviceimpl.InternalHostServiceImpl;
 import org.junit.jupiter.api.*;
@@ -34,6 +35,7 @@ class HostServiceTest {
         var request = getHostRequest("test", "127.0.0.1");
 
         //when
+        when(internalHostService.saveHost(any())).thenReturn(HostMapper.INSTANCE.toEntity(request));
         var response = hostService.createHost(request);
 
         //then
