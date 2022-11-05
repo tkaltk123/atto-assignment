@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface InternalHostService {
 
-    void saveHost(HostEntity host);
+    HostEntity saveHost(HostEntity host);
 
     void deleteHost(HostEntity host);
 
@@ -17,4 +17,6 @@ public interface InternalHostService {
     boolean isDuplicateIp(String ip);
 
     List<HostEntity> getAllHosts();
+
+    int getHostsCount();
 }

@@ -2,6 +2,7 @@ package com.yunseojin.attoassignment.host.repository;
 
 import com.yunseojin.attoassignment.host.entity.HostEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
@@ -12,4 +13,7 @@ public interface HostRepository extends JpaRepository<HostEntity, Long> {
     boolean existsByName(String name);
 
     boolean existsByIp(String ip);
+
+    @Query("select count(h.id) from HostEntity h")
+    int getHostsCount();
 }

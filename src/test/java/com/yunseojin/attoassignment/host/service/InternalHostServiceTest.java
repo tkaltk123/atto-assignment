@@ -183,4 +183,21 @@ class InternalHostServiceTest {
         //then
         assertEquals(3, result.size());
     }
+
+    @Order(11)
+    @DisplayName("getHostsCount 호스트 1개")
+    @Test
+    void getHostsCount_1_host1() {
+
+        //given
+
+        //when
+        when(hostRepository.getHostsCount()).thenReturn(1);
+        var result = internalHostService.getHostsCount();
+
+        //then
+        assertEquals(1, result);
+    }
+
+
 }
