@@ -108,6 +108,7 @@ public class HostServiceImpl implements HostService {
         return host.getIsAlive();
     }
 
+    @Transactional
     @Override
     public HostResponse getHost(Long hostId) {
 
@@ -116,6 +117,7 @@ public class HostServiceImpl implements HostService {
         return HostMapper.INSTANCE.toResponse(host);
     }
 
+    @Transactional
     @Override
     public List<HostResponse> getAllHosts() {
 
